@@ -24,6 +24,35 @@ int main(){
 	line_up.insert(loc,"Oscar");
 	
 	//Write your code here
+	// Luffy, Sanji, Nami มาต่อแถวด้านหลังตามลำดับ
+	line_up.push_back("Luffy");
+	line_up.push_back("Sanji");
+	line_up.push_back("Nami");
+	
+	// 2 คนที่หัวแถวได้เข้าไปในส้วมแล้ว
+	line_up.pop_front();
+	line_up.pop_front();
+	
+	// Narutu มาแทรกแถวหลัง Luffy
+	loc = find(line_up.begin(), line_up.end(), "Luffy");
+	loc++; // เลื่อน iterator ไปด้านหลัง Luffy 1 ตำแหน่ง
+	line_up.insert(loc, "Narutu");
+	
+	// Prayath ท้องเสียปวดขี้สุด ๆ เลยมาแทรกแซวหน้าสุด
+	line_up.push_front("Prayath");
+	
+	// Tony ยอมไม่ได้เลยมาแทรกด้านหลัง Prayath
+	loc = find(line_up.begin(), line_up.end(), "Prayath");
+	loc++; // เลื่อน iterator ไปด้านหลัง Prayath 1 ตำแหน่ง
+	line_up.insert(loc, "Tony");
+	
+	// Bob ทนไม่ไหวเลย เลยเปลี่ยนใจออกไปขี้ที่อื่น
+	line_up.remove("Bob");
+	
+	// 3 คนที่หัวแถวได้เข้าไปในส้วมแล้ว
+	line_up.pop_front();
+	line_up.pop_front();
+	line_up.pop_front();
 	
 	printList(line_up);
 		
